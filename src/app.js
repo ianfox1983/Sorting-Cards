@@ -121,7 +121,6 @@ function drawCard(myObject, place) {
 }
 
 function bubbleSort(arr) {
-  console.log("hola");
   let wall = arr.length - 1; //we start the wall at the end of the array
   while (wall > 0) {
     let index = 0;
@@ -144,7 +143,8 @@ function sortCardsBubble() {
   SORT_BUTTON_BUBBLE.addEventListener("click", event => {
     bubbleSort(cardList);
     CARD_LIST_ORDERED.innerHTML = "";
-    CARD_LIST_ORDERED.innerHTML = "<p>Cartas ordenadas:</p>";
+    CARD_LIST_ORDERED.innerHTML =
+      "<h2>Cartas ordenadas con Bubble Sorting:</h2>";
     for (let index = 0; index < cardList.length; index++) {
       drawCard(cardList[index], CARD_LIST_ORDERED);
     }
@@ -154,7 +154,8 @@ function sortCardsBubble() {
 function selectSort(arr) {
   let min = 0;
   while (min < arr.length - 1) {
-    for (let i = min + 1; i < arr.length - 1; i++) {
+    for (let i = min + 1; i < arr.length /*-1*/; i++) {
+      // le quitamos -1 y funciona bien
       if (arr[min].number > arr[i].number) {
         let aux = arr[min];
         arr[min] = arr[i];
@@ -170,7 +171,8 @@ function sortCardsSelect() {
   SORT_BUTTON_SELECT.addEventListener("click", event => {
     selectSort(cardList);
     CARD_LIST_ORDERED.innerHTML = "";
-    CARD_LIST_ORDERED.innerHTML = "<p>Cartas ordenadas:</p>";
+    CARD_LIST_ORDERED.innerHTML =
+      "<h2>Cartas ordenadas con Selection Sorting:</h2>";
     for (let index = 0; index < cardList.length; index++) {
       drawCard(cardList[index], CARD_LIST_ORDERED);
     }
