@@ -2,15 +2,22 @@
 
 body {
   background-color: blue;
-  /* background-image: url(https://media.giphy.com/media/3ov9jUCYetT3GVwcy4/giphy-downsized-large.gif); */
+  background-image: url(https://media.giphy.com/media/3ov9jUCYetT3GVwcy4/giphy-downsized-large.gif);
   font-family: "Courgette", cursive;
   background-size: cover;
 }
 
 header,
-section {
+#cardList,
+#cardListOrdered {
   display: flex;
   flex-direction: row;
+  margin-bottom: 2rem;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
 }
 
 input,
@@ -23,11 +30,14 @@ form {
   display: flex;
   flex-direction: column;
   background-color: white;
-  margin: auto;
-  width: 200px;
-  height: 250px;
+  margin: 0.5rem;
+  width: 100px;
+  height: 125px;
   border-radius: 25px;
   margin-top: 50px;
+  border: 2px;
+  border-style: solid;
+  border-color: black;
 }
 
 .buttonBox {
@@ -39,7 +49,7 @@ form {
 .topBox,
 .bottomBox {
   height: 25%;
-  font-size: 25px;
+  font-size: 2em;
   display: block;
   margin-left: 10%;
 }
@@ -52,7 +62,7 @@ form {
 .centerBox {
   height: 50%;
   text-align: center;
-  font-size: 60px;
+  font-size: 2.5em;
   display: block;
   align-content: center;
 }
@@ -61,5 +71,10 @@ form {
   border-color: red;
   background-color: black;
   color: red;
+  font-weight: bold;
+}
+
+p {
+  color: black;
   font-weight: bold;
 }
