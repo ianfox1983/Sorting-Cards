@@ -1,1 +1,65 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  background-color: blue;
+  /* background-image: url(https://media.giphy.com/media/3ov9jUCYetT3GVwcy4/giphy-downsized-large.gif); */
+  font-family: "Courgette", cursive;
+  background-size: cover;
+}
+
+header,
+section {
+  display: flex;
+  flex-direction: row;
+}
+
+input,
+button,
+form {
+  display: inline-block;
+}
+
+#card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: auto;
+  width: 200px;
+  height: 250px;
+  border-radius: 25px;
+  margin-top: 50px;
+}
+
+.buttonBox {
+  margin: 20px auto;
+  text-align: center;
+  font-family: "Courgette", cursive;
+}
+
+.topBox,
+.bottomBox {
+  height: 25%;
+  font-size: 25px;
+  display: block;
+  margin-left: 10%;
+}
+
+.bottomBox {
+  margin-right: 10%;
+  transform: rotate(180deg);
+}
+
+.centerBox {
+  height: 50%;
+  text-align: center;
+  font-size: 60px;
+  display: block;
+  align-content: center;
+}
+
+.button-style {
+  border-color: red;
+  background-color: black;
+  color: red;
+  font-weight: bold;
+}
