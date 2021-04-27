@@ -2,7 +2,7 @@
 import "bootstrap";
 import "./style.css";
 const JOKER =
-  "<img src='https://media.istockphoto.com/vectors/dancing-joker-with-playing-cards-on-white-vector-id960303126' style='width: 2em; height: 2em;'>";
+  "<img src='https://media.istockphoto.com/vectors/dancing-joker-with-playing-cards-on-white-vector-id960303126' style='width: 1.4em; height: 1.4em;'>";
 const NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 const ICONS = ["♥", "♠", "♦", "♣"];
 const COLORS = ["black", "red"];
@@ -150,9 +150,10 @@ function bubbleSort(arr) {
         let aux = arr[index];
         arr[index] = arr[index + 1];
         arr[index + 1] = aux;
+        drawRowOfCards(cardList, contador);
+        contador++;
       }
-      drawRowOfCards(cardList, contador);
-      contador++;
+
       index++;
     }
     wall--; //decrease the wall for optimization
@@ -170,9 +171,9 @@ function selectSort(arr) {
         let aux = arr[min];
         arr[min] = arr[i];
         arr[i] = aux;
+        drawRowOfCards(cardList, contador);
+        contador++;
       }
-      drawRowOfCards(cardList, index);
-      contador++;
     }
     min++;
   }
