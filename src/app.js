@@ -125,7 +125,7 @@ function drawRowOfCards(myArray, index) {
 function sortCardsBubble() {
   SORT_BUTTON_BUBBLE.addEventListener("click", event => {
     CARD_LIST_ORDERED.innerHTML = "";
-    CARD_LIST_ORDERED.innerHTML = "<p>Cartas ordenadas:</p>";
+    CARD_LIST_ORDERED.innerHTML = "<p>Cartas ordenadas con Buble Sorting:</p>";
     bubbleSort(cardList);
   });
 }
@@ -133,7 +133,7 @@ function sortCardsBubble() {
 function sortCardsSelect() {
   SORT_BUTTON_SELECT.addEventListener("click", event => {
     CARD_LIST_ORDERED.innerHTML = "";
-    CARD_LIST_ORDERED.innerHTML = "<p>Cartas ordenadas:</p>";
+    CARD_LIST_ORDERED.innerHTML = "<p>Cartas ordenadas con Select Sorting:</p>";
     selectSort(cardList);
   });
 }
