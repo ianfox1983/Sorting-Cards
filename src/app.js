@@ -166,7 +166,7 @@ function selectSort(arr) {
   let min = 0;
   let contador = 0;
   while (min < arr.length - 1) {
-    for (let i = min + 1; i < arr.length - 1; i++) {
+    for (let i = min + 1; i < arr.length; i++) {
       if (arr[min].number > arr[i].number) {
         let aux = arr[min];
         arr[min] = arr[i];

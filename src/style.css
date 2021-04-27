@@ -1,8 +1,7 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
 body {
-  background-color: green;
-  /* background-image: url(https://media.giphy.com/media/3ov9jUCYetT3GVwcy4/giphy-downsized-large.gif); */
+  background-image: url(https://cdn.videvo.net/videvo_files/video/free/2016-06/small_watermarked/160323_15_PokerTracking1_1080p_preview.mp4);
   font-family: "Courgette", cursive;
   background-size: cover;
 }
