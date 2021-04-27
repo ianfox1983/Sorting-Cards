@@ -1,8 +1,8 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
 body {
-  background-color: blue;
-  background-image: url(https://media.giphy.com/media/3ov9jUCYetT3GVwcy4/giphy-downsized-large.gif);
+  background-color: green;
+  /* background-image: url(https://media.giphy.com/media/3ov9jUCYetT3GVwcy4/giphy-downsized-large.gif); */
   font-family: "Courgette", cursive;
   background-size: cover;
 }
@@ -11,9 +11,15 @@ header,
 #cardList,
 #cardListOrdered {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-bottom: 2rem;
 }
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
 section {
   display: flex;
   flex-direction: column;
