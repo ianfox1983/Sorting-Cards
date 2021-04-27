@@ -49,12 +49,10 @@ function getCard() {
   //función que genera un objeto carta con valores aleatorios (simbolo, número y color)
   let cardAux = {
     symbol: "",
-    number: "",
-    color: ""
+    number: ""
   };
   cardAux.symbol = randomElement(ICONS);
   cardAux.number = randomElement(NUMBERS);
-  cardAux.color = randomElement(COLORS);
   return cardAux;
 }
 
@@ -68,7 +66,7 @@ function drawCard(myObject, place, row) {
   topBox.id = "topBox";
   topBox.classList.add("topBox");
   topBox.innerHTML = myObject.symbol;
-  topBox.style.color = myObject.color;
+
   centerBox.id = "centerBox";
   centerBox.classList.add("centerBox");
   if (
@@ -95,11 +93,14 @@ function drawCard(myObject, place, row) {
   if (myObject.number == 14) {
     centerBox.innerHTML = JOKER;
   }
-
   bottomBox.id = "bottomBox";
   bottomBox.classList.add("bottomBox");
   bottomBox.innerHTML = myObject.symbol;
-  bottomBox.style.color = myObject.color;
+  if (bottomBox.innerHTML == "♥" || bottomBox.innerHTML == "♦") {
+    topBox.style.color = "red";
+    bottomBox.style.color = "red";
+  }
+
   if (myObject.number == 14) {
     topBox.innerHTML = "";
     bottomBox.innerHTML = "";
