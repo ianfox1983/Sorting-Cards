@@ -139,7 +139,6 @@ function sortCardsSelect() {
 }
 
 function bubbleSort(arr) {
-  console.log("hola");
   let wall = arr.length - 1; //we start the wall at the end of the array
   let contador = 0;
   while (wall > 0) {
@@ -166,6 +165,7 @@ function selectSort(arr) {
   let min = 0;
   let contador = 0;
   while (min < arr.length - 1) {
+
     for (let i = min + 1; i < arr.length; i++) {
       if (arr[min].number > arr[i].number) {
         let aux = arr[min];
@@ -179,3 +179,4 @@ function selectSort(arr) {
   }
   return arr;
 }
+

@@ -1,6 +1,7 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
 body {
+
   background-image: url(https://cdn.videvo.net/videvo_files/video/free/2016-06/small_watermarked/160323_15_PokerTracking1_1080p_preview.mp4);
   font-family: "Courgette", cursive;
   background-size: cover;
@@ -77,6 +78,7 @@ form {
   background-color: black;
   color: red;
   font-weight: bold;
+  font-size: 1.5em;
 }
 
 p {
