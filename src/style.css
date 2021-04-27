@@ -1,7 +1,7 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
 body {
-  background-color: blue;
+
   background-image: url(https://cdn.videvo.net/videvo_files/video/free/2016-06/small_watermarked/160323_15_PokerTracking1_1080p_preview.mp4);
   font-family: "Courgette", cursive;
   background-size: cover;
@@ -11,9 +11,15 @@ header,
 #cardList,
 #cardListOrdered {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-bottom: 2rem;
 }
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
 section {
   display: flex;
   flex-direction: column;
@@ -30,11 +36,11 @@ form {
   display: flex;
   flex-direction: column;
   background-color: white;
-  margin: 0.5rem;
-  width: 100px;
-  height: 125px;
-  border-radius: 25px;
-  margin-top: 50px;
+  margin: 0.2rem;
+  width: 70px;
+  height: 85px;
+  border-radius: 12px;
+  margin-top: 15px;
   border: 2px;
   border-style: solid;
   border-color: black;
@@ -49,7 +55,7 @@ form {
 .topBox,
 .bottomBox {
   height: 25%;
-  font-size: 2em;
+  font-size: 1.25em;
   display: block;
   margin-left: 10%;
 }
@@ -62,7 +68,7 @@ form {
 .centerBox {
   height: 50%;
   text-align: center;
-  font-size: 2.5em;
+  font-size: 1.5em;
   display: block;
   align-content: center;
 }
