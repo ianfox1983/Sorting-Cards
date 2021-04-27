@@ -51,11 +51,11 @@ function getCard() {
   let cardAux = {
     symbol: "",
     number: "",
-    color: ""
+    
   };
   cardAux.symbol = randomElement(ICONS);
   cardAux.number = randomElement(NUMBERS);
-  cardAux.color = randomElement(COLORS);
+  
   return cardAux;
 }
 
@@ -69,7 +69,7 @@ function drawCard(myObject, place, row) {
   topBox.id = "topBox";
   topBox.classList.add("topBox");
   topBox.innerHTML = myObject.symbol;
-  topBox.style.color = myObject.color;
+  
   centerBox.id = "centerBox";
   centerBox.classList.add("centerBox");
   if (
@@ -101,6 +101,10 @@ function drawCard(myObject, place, row) {
   bottomBox.classList.add("bottomBox");
   bottomBox.innerHTML = myObject.symbol;
   bottomBox.style.color = myObject.color;
+  if (bottomBox.innerHTML == "♥" || bottomBox.innerHTML == "♦") {
+     topBox.style.color = "red";
+     bottomBox.style.color = "red";
+   }
   if (myObject.number == 14) {
     topBox.innerHTML = "";
     bottomBox.innerHTML = "";
