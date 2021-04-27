@@ -2,11 +2,10 @@
 import "bootstrap";
 import "./style.css";
 const JOKER =
-  "<img src='https://media.istockphoto.com/vectors/dancing-joker-with-playing-cards-on-white-vector-id960303126' style='width: 1.4em; height: 1.4em;'>";
+  "<img src='https://media.istockphoto.com/vectors/dancing-joker-with-playing-cards-on-white-vector-id960303126' style='width: 1.8em; height: 1.8em;'>";
 const NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 const ICONS = ["♥", "♠", "♦", "♣"];
 const COLORS = ["black", "red"];
-
 const CARD_LIST = document.querySelector("#cardList");
 const CARD_LIST_ORDERED = document.querySelector("#cardListOrdered");
 const INPUT = document.querySelector("#NumberOfCards");
@@ -15,7 +14,6 @@ const SORT_BUTTON_BUBBLE = document.querySelector("#sortButtonBubble");
 const SORT_BUTTON_SELECT = document.querySelector("#sortButtonSelect");
 
 let cardList = [];
-let cardListBubble = [];
 
 window.onload = function() {
   generateNewCards();
@@ -25,14 +23,15 @@ window.onload = function() {
 
 function generateNewCards() {
   //función que genera nuevas cartas cuando se pulsa el botón de generar
-  let numberOfCards = "";
   GENERATE_BUTTON.addEventListener("click", event => {
+    let numberOfCards = "";
     numberOfCards = INPUT.value; //recoge dato del input
     CARD_LIST.innerHTML = ""; //vacía div y borra cartas anteriores
     CARD_LIST_ORDERED.innerHTML = "";
     cardList = []; //vacía array y borra cartas anteriores
-    let row = document.createElement("div");
+    let row = document.createElement("div"); //crea la fila en la que se imprimiran cartas
     for (let index = 0; index < numberOfCards; index++) {
+      //este bucle genera el num de cartas que introduzcamos en el input
       let cardTemp = getCard();
       cardList.push(cardTemp);
       drawCard(cardTemp, CARD_LIST, row);
@@ -47,7 +46,7 @@ function randomElement(myArray) {
 }
 
 function getCard() {
-  //función que genera el valor de una carta (simbolo, número y color)
+  //función que genera un objeto carta con valores aleatorios (simbolo, número y color)
   let cardAux = {
     symbol: "",
     number: "",
@@ -60,7 +59,7 @@ function getCard() {
 }
 
 function drawCard(myObject, place, row) {
-  //función que imprime la fila (array) de cartas en pantalla
+  //función que imprime un array de objetos carta en pantalla
   let topBox = document.createElement("div");
   let centerBox = document.createElement("div");
   let bottomBox = document.createElement("div");
@@ -114,9 +113,10 @@ function drawCard(myObject, place, row) {
   place.appendChild(row);
 }
 
-function drawRowOfCards(myArray, index) {
+function drawRowOfCards(myArray, counter) {
+  //esta función imprime la fila de cartas que irá pasando el algoritmo en cada proceso
   let row = document.createElement("div");
-  row.innerHTML = index;
+  row.innerHTML = counter;
   for (let index = 0; index < cardList.length; index++) {
     drawCard(myArray[index], CARD_LIST_ORDERED, row);
   }
@@ -125,22 +125,25 @@ function drawRowOfCards(myArray, index) {
 function sortCardsBubble() {
   SORT_BUTTON_BUBBLE.addEventListener("click", event => {
     CARD_LIST_ORDERED.innerHTML = "";
-    CARD_LIST_ORDERED.innerHTML = "<p>Cartas ordenadas:</p>";
+    CARD_LIST_ORDERED.innerHTML =
+      "<p>Cartas ordenadas con Bubble Sort: (Para volver a utilizar un algoritmo de ordenación, generar nuevas cartas)</p>";
     bubbleSort(cardList);
   });
 }
 
 function sortCardsSelect() {
+  //
   SORT_BUTTON_SELECT.addEventListener("click", event => {
     CARD_LIST_ORDERED.innerHTML = "";
-    CARD_LIST_ORDERED.innerHTML = "<p>Cartas ordenadas:</p>";
+    CARD_LIST_ORDERED.innerHTML =
+      "<p>Cartas ordenadas con Select Sort: (Para volver a utilizar un algoritmo de ordenación, generar nuevas cartas):</p> ";
     selectSort(cardList);
   });
 }
 
 function bubbleSort(arr) {
   let wall = arr.length - 1; //we start the wall at the end of the array
-  let contador = 0;
+  let counter = 0;
   while (wall > 0) {
     let index = 0;
     while (index < wall) {
@@ -149,8 +152,8 @@ function bubbleSort(arr) {
         let aux = arr[index];
         arr[index] = arr[index + 1];
         arr[index + 1] = aux;
-        drawRowOfCards(cardList, contador);
-        contador++;
+        drawRowOfCards(cardList, counter);
+        counter++;
       }
 
       index++;
@@ -163,20 +166,18 @@ function bubbleSort(arr) {
 
 function selectSort(arr) {
   let min = 0;
-  let contador = 0;
+  let counter = 0;
   while (min < arr.length - 1) {
-
     for (let i = min + 1; i < arr.length; i++) {
       if (arr[min].number > arr[i].number) {
         let aux = arr[min];
         arr[min] = arr[i];
         arr[i] = aux;
-        drawRowOfCards(cardList, contador);
-        contador++;
+        drawRowOfCards(cardList, counter);
+        counter++;
       }
     }
     min++;
   }
   return arr;
 }
-
