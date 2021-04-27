@@ -1,8 +1,8 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
 body {
-
-  background-image: url(https://cdn.videvo.net/videvo_files/video/free/2016-06/small_watermarked/160323_15_PokerTracking1_1080p_preview.mp4);
+  background-color: green;
+  background-image: url(https://media.giphy.com/media/3ov9jUCYetT3GVwcy4/giphy-downsized-large.gif);
   font-family: "Courgette", cursive;
   background-size: cover;
 }
@@ -55,7 +55,7 @@ form {
 .topBox,
 .bottomBox {
   height: 25%;
-  font-size: 1.25em;
+  font-size: 1.6em;
   display: block;
   margin-left: 10%;
 }
@@ -68,7 +68,7 @@ form {
 .centerBox {
   height: 50%;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 2em;
   display: block;
   align-content: center;
 }
@@ -78,7 +78,7 @@ form {
   background-color: black;
   color: red;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 1, 2em;
 }
 
 p {
